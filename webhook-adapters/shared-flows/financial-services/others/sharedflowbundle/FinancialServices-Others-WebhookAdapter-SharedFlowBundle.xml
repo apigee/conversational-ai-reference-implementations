@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlowBundle revision="1" name="FinancialServices-Others-WebhookAdapter-SharedFlowBundle">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1616405295700</CreatedAt>
+    <LastModifiedAt>1616405295700</LastModifiedAt>
+    <Policies>
+	      <Policy>Administrative-Services-Southbound-API-Call</Policy>
+	      <Policy>Corporate-Actions-Southbound-API-Call</Policy>
+	      <Policy>Tax-Retirement-Southbound-API-Call</Policy>
+	      <Policy>Technical-Issues-Southbound-API-Call</Policy>
+	      <Policy>Trading-Investing-Southbound-API-Call</Policy>
+        <Policy>Read-Response</Policy>
+	      <Policy>Administrative-Services-Set-Dialogflow-Response</Policy>
+	      <Policy>Corporate-Actions-Set-Dialogflow-Response</Policy>
+	      <Policy>Tax-Retirement-Set-Dialogflow-Response</Policy>
+	      <Policy>Technical-Issues-Set-Dialogflow-Response</Policy>
+	      <Policy>Trading-Investing-Set-Dialogflow-Response</Policy>
+    </Policies>
+    <Resources></Resources>
+    <SharedFlows>
+        <SharedFlow>FinancialServices-Others-WebhookAdapter-SharedFlow</SharedFlow>
+    </SharedFlows>
+    <subType>SharedFlow</subType>
+</SharedFlowBundle>

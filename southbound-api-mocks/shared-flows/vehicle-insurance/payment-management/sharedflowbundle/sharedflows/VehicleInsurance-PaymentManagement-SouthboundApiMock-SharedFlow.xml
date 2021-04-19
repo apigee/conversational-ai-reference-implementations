@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="VehicleInsurance-PaymentManagement-SouthboundApiMock-SharedFlow">
+    <Step>
+        <Name>Check-Refund</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/refunds") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Partial-Payment</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/partial-payments") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Payment-Confirmation</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/payment-confirmation") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Request-Extension</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/payment-requests") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Update-Payment-Info</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/payment-profiles/*") and (request.verb = "PUT")</Condition>
+    </Step>
+</SharedFlow>

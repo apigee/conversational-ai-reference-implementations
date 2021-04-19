@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="Telecommunications-PlanManagement-SouthboundApiMock-SharedFlow">
+    <Step>
+        <Name>Cancel-Plan-Insurance</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/plans/*/cancel-feature") and (request.queryparam.key = "insurance") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Identify-Plan-Costs</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/plans/*/costs") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Identify-Plan-Options</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/plans/*/options") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Live-Agent</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/logs") and (request.queryparam.action = "agent-handoff") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Unlimited-Plan</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/plans/*/upgrade-tier") and (request.queryparam.key = "unlimited100") and (request.verb = "POST")</Condition>
+    </Step>
+</SharedFlow>

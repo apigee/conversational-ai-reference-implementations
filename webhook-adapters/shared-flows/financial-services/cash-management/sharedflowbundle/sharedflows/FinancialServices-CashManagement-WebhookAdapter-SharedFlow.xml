@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="FinancialServices-CashManagement-WebhookAdapter-SharedFlow">
+    <Step>
+        <Name>Parse-Dialogflow-Request</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "check-inquiries"</Condition>
+        <Name>Check-Inquiries-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "deposit-funds"</Condition>
+        <Name>Deposit-Funds-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "transfer-funds"</Condition>
+        <Name>Transfer-Funds-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "wire-transfer"</Condition>
+        <Name>Wire-Transfer-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "withdrawal"</Condition>
+        <Name>Withdrawals-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+         <Name>Read-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "check-inquiries"</Condition>
+        <Name>Check-Inquiries-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "deposit-funds"</Condition>
+        <Name>Deposit-Funds-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "transfer-funds"</Condition>
+        <Name>Transfer-Funds-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "wire-transfer"</Condition>
+        <Name>Wire-Transfer-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "withdrawal"</Condition>
+        <Name>Withdrawals-Set-Dialogflow-Response</Name>
+    </Step>
+</SharedFlow>

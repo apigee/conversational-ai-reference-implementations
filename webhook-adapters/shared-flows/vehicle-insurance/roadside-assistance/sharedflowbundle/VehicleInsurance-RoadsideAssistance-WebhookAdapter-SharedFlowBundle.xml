@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlowBundle revision="1" name="VehicleInsurance-RoadsideAssistance-WebhookAdapter-SharedFlowBundle">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1616405295700</CreatedAt>
+    <LastModifiedAt>1616405295700</LastModifiedAt>
+    <Policies>
+	      <Policy>Cancel-Southbound-API-Call</Policy>
+	      <Policy>Confirm-Active-Southbound-API-Call</Policy>
+	      <Policy>Explain-Coverage-Southbound-API-Call</Policy>
+	      <Policy>Report-Flat-Tire-Southbound-API-Call</Policy>
+	      <Policy>Report-Lost-Keys-Southbound-API-Call</Policy>
+	      <Policy>Request-Car-Nonstart-Southbound-API-Call</Policy>
+	      <Policy>Request-Contact-Info-Southbound-API-Call</Policy>
+	      <Policy>Request-Help-Southbound-API-Call</Policy>
+	      <Policy>Request-Tow-Southbound-API-Call</Policy>
+        <Policy>Read-Response</Policy>
+	      <Policy>Cancel-Set-Dialogflow-Response</Policy>
+	      <Policy>Confirm-Active-Set-Dialogflow-Response</Policy>
+	      <Policy>Explain-Coverage-Set-Dialogflow-Response</Policy>
+	      <Policy>Report-Flat-Tire-Set-Dialogflow-Response</Policy>
+	      <Policy>Report-Lost-Keys-Set-Dialogflow-Response</Policy>
+	      <Policy>Request-Car-Nonstart-Set-Dialogflow-Response</Policy>
+	      <Policy>Request-Contact-Info-Set-Dialogflow-Response</Policy>
+	      <Policy>Request-Help-Set-Dialogflow-Response</Policy>
+	      <Policy>Request-Tow-Set-Dialogflow-Response</Policy>
+    </Policies>
+    <Resources></Resources>
+    <SharedFlows>
+        <SharedFlow>VehicleInsurance-RoadsideAssistance-WebhookAdapter-SharedFlow</SharedFlow>
+    </SharedFlows>
+    <subType>SharedFlow</subType>
+</SharedFlowBundle>

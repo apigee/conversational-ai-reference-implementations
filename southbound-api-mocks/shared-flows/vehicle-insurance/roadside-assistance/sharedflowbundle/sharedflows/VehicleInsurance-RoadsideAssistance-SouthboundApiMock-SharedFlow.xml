@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="VehicleInsurance-RoadsideAssistance-SouthboundApiMock-SharedFlow">
+    <Step>
+        <Name>Cancel-Request</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests/*") and (request.verb = "DELETE")</Condition>
+    </Step>
+    <Step>
+        <Name>Confirm-Active</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests/*") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Explain-Coverage</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/explanations") and (request.queryparam.type = "coverage") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Report-Car-Nonstart</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests") and (request.queryparam.type = "car-nonstart") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Report-Flat-Tire</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests") and (request.queryparam.type = "flat-tire") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Report-Lost-Keys</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests") and (request.queryparam.type = "lost-keys") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Request-Contact-Info</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/contacts") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Request-Help</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Request-Tow</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/help-requests") and (request.queryparam.type = "car-tow") and (request.verb = "POST")</Condition>
+    </Step>
+</SharedFlow>

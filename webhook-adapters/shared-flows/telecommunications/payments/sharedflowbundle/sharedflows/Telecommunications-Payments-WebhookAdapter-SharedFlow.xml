@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="Telecommunications-Payments-WebhookAdapter-SharedFlow">
+    <Step>
+        <Name>Parse-Dialogflow-Request</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "make-payment-arrangements"</Condition>
+        <Name>Make-Payment-Arrangements-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "installment-payment"</Condition>
+        <Name>Make-Payment-Installment-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "make-payment"</Condition>
+        <Name>Make-Payment-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "manage-autopay"</Condition>
+        <Name>Manage-Autopay-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "reverse-payment"</Condition>
+        <Name>Reverse-Payment-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+         <Name>Read-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "make-payment-arrangements"</Condition>
+        <Name>Make-Payment-Arrangements-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "installment-payment"</Condition>
+        <Name>Make-Payment-Installment-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "make-payment"</Condition>
+        <Name>Make-Payment-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "manage-autopay"</Condition>
+        <Name>Manage-Autopay-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "reverse-payment"</Condition>
+        <Name>Reverse-Payment-Set-Dialogflow-Response</Name>
+    </Step>
+</SharedFlow>

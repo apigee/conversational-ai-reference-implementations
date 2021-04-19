@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="Telecommunications-BillingManagement-SouthboundApiMock-SharedFlow">
+    <Step>
+        <Name>Clarify-Information</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/invoices/*/clarifications") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Correct-Billing-Information</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/profiles/*/adjustments") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Fees-Charges</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/invoices/*/educations") and (request.verb = "GET")</Condition>
+    </Step>
+    <Step>
+        <Name>Live-Agent</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/logs") and (request.queryparam.action = "agent-handoff") and (request.verb = "POST")</Condition>
+    </Step>
+    <Step>
+        <Name>Missing-Credit</Name>
+        <Condition>(proxy.pathsuffix MatchesPath "/invoices/*/investigations") and (request.verb = "GET")</Condition>
+    </Step>
+</SharedFlow>

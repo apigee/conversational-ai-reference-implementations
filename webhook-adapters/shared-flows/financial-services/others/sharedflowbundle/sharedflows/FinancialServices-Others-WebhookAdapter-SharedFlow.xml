@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<SharedFlow name="FinancialServices-Others-WebhookAdapter-SharedFlow">
+    <Step>
+        <Name>Parse-Dialogflow-Request</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "administrative-services"</Condition>
+        <Name>Administrative-Services-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "corporate-actions"</Condition>
+        <Name>Corporate-Actions-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "tax-retirement"</Condition>
+        <Name>Tax-Retirement-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "technical-issues"</Condition>
+        <Name>Technical-Issues-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "trading-investing"</Condition>
+        <Name>Trading-Investing-Southbound-API-Call</Name>
+    </Step>
+    <Step>
+         <Name>Read-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "administrative-services"</Condition>
+        <Name>Administrative-Services-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "corporate-actions"</Condition>
+        <Name>Corporate-Actions-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "tax-retirement"</Condition>
+        <Name>Tax-Retirement-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "technical-issues"</Condition>
+        <Name>Technical-Issues-Set-Dialogflow-Response</Name>
+    </Step>
+    <Step>
+        <Condition>google.dialogflow.fulfillment.tag = "trading-investing"</Condition>
+        <Name>Trading-Investing-Set-Dialogflow-Response</Name>
+    </Step>
+</SharedFlow>
